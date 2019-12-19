@@ -11,6 +11,7 @@ The project will be built with django as backend framework and bootstrap, react 
 ### Requirements
 * Django
 * pillow
+* OpenCV
 * django-braces
 * django-embed-video
 * django-allauth
