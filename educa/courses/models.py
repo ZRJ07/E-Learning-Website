@@ -11,17 +11,17 @@ from django.utils.safestring import mark_safe
 
 
 
-
+# information about the subject
 class Subject(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
-
+# ordering course title
     class Meta:
         ordering = ['title']
-
+# to show the title
     def __str__(self):
         return self.title
-
+# information about the course
 class Course(models.Model):
     # Owner -> instructor / creator of the course
     owner = models.ForeignKey(User,
@@ -36,13 +36,13 @@ class Course(models.Model):
     students = models.ManyToManyField(User,
                                       related_name='courses_joined',
                                       blank=True)
-
+# ordering courses that are created
     class Meta:
         ordering = ['-created']
-
+# to show the course title
     def __str__(self):
         return self.title
-
+# admin can see the courses and about
 class Module(models.Model):
     course = models.ForeignKey(Course,
                         related_name='modules',
@@ -57,7 +57,7 @@ class Module(models.Model):
     def __str__(self):
         return '{}. {}'.format(self.order, self.title)
 
-
+# content of courses
 class Content(models.Model):
     module = models.ForeignKey(Module,
                                related_name='contents',
@@ -74,7 +74,7 @@ class Content(models.Model):
 
     class Meta:
             ordering = ['order']
-
+# factory pattern for all modules
 class ItemBase(models.Model):
     owner = models.ForeignKey(User,
                               related_name='%(class)s_related',

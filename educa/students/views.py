@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
@@ -62,10 +61,7 @@ class StudentEnrollCourseView(LoginRequiredMixin, FormView):
         return reverse_lazy('student_course_detail',
                             args=[self.course.id])
 
-
-=======
-
-# to view the course list of student
+# to view the coiurse list of student
 class StudentCourseListView(LoginRequiredMixin, ListView):
     model = Course
     template_name = 'students/course/list.html'
@@ -96,4 +92,3 @@ class StudentCourseDetailView(DetailView):
             # get first module
             context['module'] = course.modules.all()[0]
         return context
->>>>>>> rifat
