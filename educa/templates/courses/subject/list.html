@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br>
+<h2 class="display-3"> Subjects </h2>
+<br>
+<br>
+<hr>
+{% for sub in object_list %}
+
+    <div class="card">
+
+<div class="card-header">
+        <p><span class='text-weight-bold'> {{forloop.counter}}.</span>. {{sub.title}}</p>
+        <a href="{% url 'course_list_subject' sub.slug %}" >View</a>
+</div>
+
+    <br />
+
+  {% endfor %}
+
+{% endblock content %}
