@@ -17,25 +17,25 @@ from .forms import ModuleFormSet
 from students.forms import CourseEnrollForm
 
 
-
+# handles the formset to add, update and delete modules for course
 class CourseModuleUpdateView(TemplateResponseMixin, View):
     template_name = 'courses/manage/module/formset.html'
     course = None
-
+    # to avoid repeating the code to build the formset
     def get_formset(self, data=None):
         return ModuleFormSet(instance=self.course, data=data)
-
+    # http handeling
     def dispatch(self, request, pk):
         self.course = get_object_or_404(Course,
                                         id=pk,
                                         owner=request.user)
         return super(CourseModuleUpdateView, self).dispatch(request, pk)
-
+    # executed for get request
     def get(self, request, *args, **kwargs):
         formset = self.get_formset()
         return self.render_to_response({'course': self.course,
                                         'formset': formset})
-
+    # executed for post request
     def post(self, request, *args, **kwargs):
         formset = self.get_formset(data=request.POST)
         if formset.is_valid():
@@ -53,17 +53,17 @@ class OwnerMixin(object):
     def get_querysset(self):
         qs = super(OwnerMixin, self).get_querysset()
         return qs.filter(owner=self.request.user)
-
+# to make the owner able to edit
 class OwnerEditMixin(object):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
-
+# inherits ownermixin to view page
 class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
     model = Course
     fields = ['subject', 'title', 'slug', 'overview']
     success_url = reverse_lazy('manage_course_list')
-
+# inherits ownermixin to view update page
 class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
     fields = ['subject', 'title', 'slug', 'overview']
     success_url = reverse_lazy('manage_course_list')
@@ -81,15 +81,15 @@ class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
 #### Views
 class ManageCourseListView(OwnerCourseMixin, ListView): #listview with mixin
     template_name = 'courses/manage/course/list.html'
-
+# to view the create course page
 class CourseCreateView(PermissionRequiredMixin,
                         OwnerCourseEditMixin, CreateView):
     permission_required = 'courses.add_course'
-
+# to view the update course page
 class CourseUpdateView(PermissionRequiredMixin,
                         OwnerCourseEditMixin, UpdateView):
     permission_required = 'courses.change_course'
-
+# to view the delete course page
 class CourseDeleteView(PermissionRequiredMixin,
                         OwnerCourseMixin, DeleteView):
     permission_required = 'courses.delete_course'
@@ -115,7 +115,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
                                                  'created',
                                                  'updated'])
         return Form(*args, **kwargs)
-
+# http handeling
     def dispatch(self, request, module_id, model_name, id=None):
         self.module = get_object_or_404(Module,
                                        id=module_id,
@@ -151,7 +151,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
         return self.render_to_response({'form': form,
                                         'object': self.obj})
 
-
+# delete the content
 class ContentDeleteView(View):
 
     def post(self, request, id):
@@ -202,7 +202,7 @@ class SubjectListView(ListView):
     model = Subject
     template_name = 'courses/subject/list.html'
 
-
+# to view the course list
 class CourseListView(TemplateResponseMixin, View):
     model = Course
     template_name = 'courses/course/list.html'
@@ -218,7 +218,7 @@ class CourseListView(TemplateResponseMixin, View):
         return self.render_to_response({'subjects': subjects,
                                         'subject': subject,
                                         'courses': courses})
-
+# to view the course details
 class CourseDetailView(DetailView):
     model = Course
     template_name = 'courses/course/detail.html'
