@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['0001_5finitial_161',['0001_initial',['../namespacecourses_1_1migrations_1_10001__initial.html',1,'courses::migrations']]],
+  ['0002_5fcontent_5ffile_5fimage_5ftext_5fvideo_162',['0002_content_file_image_text_video',['../namespacecourses_1_1migrations_1_10002__content__file__image__text__video.html',1,'courses::migrations']]],
+  ['0003_5fauto_5f20190721_5f0004_163',['0003_auto_20190721_0004',['../namespacecourses_1_1migrations_1_10003__auto__20190721__0004.html',1,'courses::migrations']]],
+  ['0004_5fauto_5f20190817_5f1421_164',['0004_auto_20190817_1421',['../namespacecourses_1_1migrations_1_10004__auto__20190817__1421.html',1,'courses::migrations']]],
+  ['0005_5fcourse_5fstudents_165',['0005_course_students',['../namespacecourses_1_1migrations_1_10005__course__students.html',1,'courses::migrations']]],
+  ['admin_166',['admin',['../namespacecourses_1_1admin.html',1,'courses']]],
+  ['apps_167',['apps',['../namespacecourses_1_1apps.html',1,'courses']]],
+  ['course_168',['course',['../namespacecourses_1_1templatetags_1_1course.html',1,'courses::templatetags']]],
+  ['courses_169',['courses',['../namespacecourses.html',1,'']]],
+  ['fields_170',['fields',['../namespacecourses_1_1fields.html',1,'courses']]],
+  ['forms_171',['forms',['../namespacecourses_1_1forms.html',1,'courses']]],
+  ['migrations_172',['migrations',['../namespacecourses_1_1migrations.html',1,'courses']]],
+  ['models_173',['models',['../namespacecourses_1_1models.html',1,'courses']]],
+  ['templatetags_174',['templatetags',['../namespacecourses_1_1templatetags.html',1,'courses']]],
+  ['tests_175',['tests',['../namespacecourses_1_1tests.html',1,'courses']]],
+  ['urls_176',['urls',['../namespacecourses_1_1urls.html',1,'courses']]],
+  ['views_177',['views',['../namespacecourses_1_1views.html',1,'courses']]]
+];
