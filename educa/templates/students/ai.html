@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if uploaded_file_url %}
+    <p><img src="{{ uploaded_file_url }}"></p>
+    <p>Color: {{col}}</p>
+  {% endif %}
+
+  <p><a href="{% url 'course_list' %}">Return to home</a></p>
+{% endblock %}

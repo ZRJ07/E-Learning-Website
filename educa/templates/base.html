@@ -1,0 +1,36 @@
+{% load socialaccount %}
+{% load course %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}Educa{% endblock %}</title>
+<link href="{% static "css/slider.css" %}" rel="stylesheet">
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
+<body>
+
+  {% include 'base/navbar.html' %}
+
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+
+
+  {% block script %}
+  {% endblock %}
+  <script>
+    $(document).ready(function() {
+
+      {% block domready %}
+      {% endblock %}
+    });
+  </script>
+</body>
+</html>

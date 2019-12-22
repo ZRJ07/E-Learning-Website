@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block content %}
+
+
+    {% with subject=course.subject %}
+        <h1>
+            {{ object.title }}
+        </h1>
+
+
+
+        <div class="jumbotron card card-image" style="background-image: url({% static 'img/bg.jpg' %});">
+  <div class="text-white text-center py-5 px-4">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Course Overview</strong></h2>
+      <h5 class="mx-5 mb-5"><a href="{% url "course_list_subject" subject.slug %}">{{ subject.title }}:</a>
+      {{ course.modules.count }} modules.
+      Instructor: {{ course.owner.get_full_name }}
+      </h5>
+      {{ object.overview|linebreaks }}
+      {% if request.user.is_authenticated %}
+          <form action="{% url "student_enroll_course" %}" method="post">
+
+              {{ enroll_form }}
+              {% csrf_token %}
+
+              <input type="submit" class="btn btn-primary" value="Enroll now">
+
+
+      {% else %}
+          <a href="{% url "student_registration" %}" class="btn btn-primary btn-lg">
+              Register to enroll
+          </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+    {% endwith %}
+
+{% endblock %}
