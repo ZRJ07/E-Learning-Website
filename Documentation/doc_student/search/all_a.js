@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['admin_19',['admin',['../namespacestudents_1_1admin.html',1,'students']]],
+  ['apps_20',['apps',['../namespacestudents_1_1apps.html',1,'students']]],
+  ['forms_21',['forms',['../namespacestudents_1_1forms.html',1,'students']]],
+  ['helpers_22',['helpers',['../namespacestudents_1_1helpers.html',1,'students']]],
+  ['models_23',['models',['../namespacestudents_1_1models.html',1,'students']]],
+  ['studentcoursedetailview_24',['StudentCourseDetailView',['../classstudents_1_1views_1_1_student_course_detail_view.html',1,'students::views']]],
+  ['studentcourselistview_25',['StudentCourseListView',['../classstudents_1_1views_1_1_student_course_list_view.html',1,'students::views']]],
+  ['studentenrollcourseview_26',['StudentEnrollCourseView',['../classstudents_1_1views_1_1_student_enroll_course_view.html',1,'students::views']]],
+  ['studentregistrationview_27',['StudentRegistrationView',['../classstudents_1_1views_1_1_student_registration_view.html',1,'students::views']]],
+  ['students_28',['students',['../namespacestudents.html',1,'']]],
+  ['studentsconfig_29',['StudentsConfig',['../classstudents_1_1apps_1_1_students_config.html',1,'students::apps']]],
+  ['success_5furl_30',['success_url',['../classstudents_1_1views_1_1_student_registration_view.html#abd5863d4acf22906a286eb9600cb5e0b',1,'students::views::StudentRegistrationView']]],
+  ['test_5ffunctions_31',['test_functions',['../namespacestudents_1_1test__functions.html',1,'students']]],
+  ['tests_32',['tests',['../namespacestudents_1_1tests.html',1,'students']]],
+  ['tl_33',['tl',['../namespacestudents_1_1tl.html',1,'students']]],
+  ['urls_34',['urls',['../namespacestudents_1_1urls.html',1,'students']]],
+  ['views_35',['views',['../namespacestudents_1_1views.html',1,'students']]]
+];
