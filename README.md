@@ -1,5 +1,6 @@
 # E-Learning-System
 This is a project for CSE327. We are building a e-learning web app where educators can upload their content and learners can learn.
+And  improve your skill ,learn more and more that is good for our website hitter
 
 The project will be built with django as backend framework and bootstrap, react as frontend.
 
