@@ -8,6 +8,11 @@ The project will be built with django as backend framework and bootstrap, react 
 * create your own branch
 * perform pull request
 
+### How to run project
+* pip install -r educa/requirements.txt
+* python manage.py migrate
+* python manage.py runserver
+
 ### Requirements
 * Django
 * pillow
